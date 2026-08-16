@@ -1,4 +1,7 @@
-import { PDFParse } from "pdf-parse";
+// Import the lib entry directly, not the package root — pdf-parse@1.1.1's
+// index.js has a debug guard (based on `module.parent`) that misfires under
+// ESM/bundler interop and tries to read its own test fixture off disk.
+import pdfParse from "pdf-parse/lib/pdf-parse.js";
 import mammoth from "mammoth";
 
 export type ExtractResult = {
@@ -10,13 +13,8 @@ export type ExtractResult = {
 export class UnsupportedFileError extends Error {}
 
 async function extractPdf(buffer: Buffer): Promise<string> {
-  const parser = new PDFParse({ data: buffer });
-  try {
-    const result = await parser.getText();
-    return result.text;
-  } finally {
-    await parser.destroy();
-  }
+  const result = await pdfParse(buffer);
+  return result.text;
 }
 
 async function extractDocx(buffer: Buffer): Promise<string> {
