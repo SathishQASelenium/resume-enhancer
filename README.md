@@ -185,6 +185,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Vercel Deployment
 
+**Live app:** [resume-enhancer-delta.vercel.app](https://resume-enhancer-delta.vercel.app)
+
 1. Push this repository to GitHub.
 2. Import it into Vercel ([vercel.com/new](https://vercel.com/new)).
 3. In the project's Environment Variables settings, add `GROQ_API_KEY` (and optionally
