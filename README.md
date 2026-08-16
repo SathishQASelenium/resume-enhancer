@@ -22,6 +22,8 @@ immediately.
 
 ## Key Features
 
+![QA Resume AI](screenshots/QA_Resume_AI.png)
+
 - **PDF & DOCX upload** with client + server validation.
 - **Verified fact extraction** — the AI extracts only what's in the source document.
 - **QA-specific skill gap detection** across Testing, Automation, API, Performance,
